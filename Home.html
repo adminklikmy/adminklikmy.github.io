@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K L I K</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        
+        :root { --primary: #facc15; }
+        * { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .logo-font { font-family: 'Space Grotesk', sans-serif; }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%); }
+        .pause-icon { filter: drop-shadow(0 0 30px #facc15); }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-yellow-400 flex items-center justify-center rounded-2xl shadow-xl shadow-yellow-500/50">
+                    <span class="text-zinc-950 text-3xl font-bold leading-none mt-1">‖</span>
+                </div>
+                <span class="logo-font text-3xl font-semibold tracking-tighter">KLIK</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#" onclick="scrollToSection('hero')" class="nav-link">Home</a>
+                <a href="Contact" onclick="scrollToSection('social')" class="nav-link">Contact</a>
+                <a href="Shop/" onclick="scrollToSection('content')" class="nav-link">Shop</a>
+                <a href="Cashout/" onclick="scrollToSection('content')" class="nav-link">Cashout</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleDarkMode()" class="w-10 h-10 flex items-center justify-center rounded-2xl glass hover:bg-white/10 text-xl">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+                <button onclick="toggleChat()" class="px-6 py-3 bg-yellow-400 hover:bg-yellow-300 text-zinc-950 font-semibold rounded-3xl flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-comment-dots"></i> <span>Chat</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 pt-24 pb-20 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-3xl text-sm backdrop-blur-md">
+                    <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                    <span class="font-medium">Made In Malaysia</span>
+                </div>
+                <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter logo-font">
+                    KLIK.<br><span class="text-yellow-400">LIKE.</span><br>FOLLOW.<br>SHARE.
+                </h1>
+                <p class="text-xl text-zinc-400 max-w-md">Platform hiburan &amp; , Berita Malaysia Dan Luar Negara.</p>
+                <div class="flex items-center gap-12 pt-6">
+                    <div><div class="text-4xl font-bold text-yellow-400">60K+</div><div class="text-sm text-zinc-400">Followers</div></div>
+                    <div><div class="text-4xl font-bold text-yellow-400">1.2M</div><div class="text-sm text-zinc-400">Views</div></div>
+                </div>
+            </div>
+            <div class="flex justify-center md:justify-end">
+                <div class="relative">
+                    <div class="w-80 h-80 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-[4rem] flex items-center justify-center rotate-6 shadow-2xl shadow-yellow-500/30">
+                        <div class="w-60 h-60 bg-zinc-950 rounded-3xl flex items-center justify-center -rotate-6 pause-icon">
+                            <span class="text-[180px] font-black text-yellow-400 leading-none">‖</span>
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-white/10 backdrop-blur-3xl px-6 py-3 rounded-3xl border border-white/20 text-sm font-medium">
+                        <i class="fa-solid fa-bolt text-yellow-400"></i> Live Now
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL MEDIA -->
+    <section id="social" class="py-24 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-4 py-2 bg-yellow-400/10 text-yellow-400 text-sm font-medium rounded-full">IKUTI KAMI</span>
+                <h2 class="text-5xl font-bold mt-4 section-header">Platform Sosial</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="https://facebook.com/klik.my" target="_blank" class="glass rounded-3xl p-8 text-center group social-btn">
+                    <i class="fa-brands fa-facebook text-6xl text-blue-500 mb-6"></i>
+                    <div class="text-2xl font-semibold mb-1">Facebook</div>
+                    <div class="text-zinc-400">@klik.my</div>
+                </a>
+                <a href="https://instagram.com/klik.my" target="_blank" class="glass rounded-3xl p-8 text-center group social-btn">
+                    <i class="fa-brands fa-instagram text-6xl text-pink-500 mb-6"></i>
+                    <div class="text-2xl font-semibold mb-1">Instagram</div>
+                    <div class="text-zinc-400">@klik.my</div>
+                </a>
+                <a href="https://tiktok.com/@klikmy" target="_blank" class="glass rounded-3xl p-8 text-center group social-btn relative overflow-hidden">
+                    <div class="absolute top-6 right-6 text-xs bg-red-500 text-white px-3 py-1 rounded-full font-medium">TRENDING</div>
+                    <i class="fa-brands fa-tiktok text-6xl mb-6"></i>
+                    <div class="text-2xl font-semibold mb-1">TikTok</div>
+                    <div class="text-zinc-400">@klikmy</div>
+                </a>
+                <a href="https://threads.net/@klik.my" target="_blank" class="glass rounded-3xl p-8 text-center group social-btn">
+                    <i class="fa-brands fa-threads text-6xl mb-6"></i>
+                    <div class="text-2xl font-semibold mb-1">Threads</div>
+                    <div class="text-zinc-400">@klik.my</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENT EMBEDS (Hanya Instagram) -->
+    <section id="content" class="py-24 bg-black">
+        <div class="max-w-4xl mx-auto px-6">
+            <div>
+                <div class="flex items-center gap-3 mb-8">
+                    <i class="fa-brands fa-instagram text-4xl text-pink-500"></i>
+                    <div><h3 class="text-3xl font-semibold">@klik.my</h3></div>
+                </div>
+                <div class="glass p-4 rounded-3xl">
+                    <iframe width="100%" height="520" src="https://www.instagram.com/klik.my/embed" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAT WIDGET -->
+    <div id="chat-widget" class="hidden fixed bottom-8 right-8 w-96 bg-zinc-900 glass rounded-3xl shadow-2xl overflow-hidden z-[100]">
+        <div class="bg-yellow-400 text-zinc-950 p-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-zinc-950 rounded-2xl flex items-center justify-center text-lg">‖</div>
+                <div>
+                    <div class="font-bold">KLik Support</div>
+                    <div class="text-xs opacity-75">Online</div>
+                </div>
+            </div>
+            <button onclick="toggleChat()" class="text-3xl leading-none">×</button>
+        </div>
+        <div class="p-8 space-y-6">
+            <button onclick="showEmail()" class="w-full flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-yellow-400 rounded-2xl p-5 text-left">
+                <i class="fa-solid fa-envelope text-3xl text-yellow-400"></i>
+                <div>
+                    <div class="font-semibold">Email Kami</div>
+                    <div class="text-sm text-zinc-400">admin.klikmy@gmail.com</div>
+                </div>
+            </button>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="https://instagram.com/klik.my" target="_blank" class="flex flex-col items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 hover:border-pink-400 rounded-2xl p-6">
+                    <i class="fa-brands fa-instagram text-4xl text-pink-400"></i>
+                    <span class="text-xs mt-3">Instagram</span>
+                </a>
+                <a href="https://tiktok.com/@klikmy" target="_blank" class="flex flex-col items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 hover:border-black rounded-2xl p-6">
+                    <i class="fa-brands fa-tiktok text-4xl"></i>
+                    <span class="text-xs mt-3">TikTok</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-white/10 py-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-9 h-9 bg-yellow-400 flex items-center justify-center rounded-2xl">
+                        <span class="text-zinc-950 text-4xl leading-none">‖</span>
+                    </div>
+                    <span class="logo-font text-4xl font-bold">KLIK</span>
+                </div>
+                <p class="text-zinc-400 text-sm"> Platform hiburan digital Malaysia </p>
+            </div>
+            <div>
+                <div class="font-semibold mb-6">Pautan Pantas</div>
+                <div class="space-y-3 text-sm">
+                    <a href="Tentang Kami" class="block text-zinc-400 hover:text-white">Tentang Kami</a>
+                    
+                </div>
+            </div>
+            <div>
+                <div class="font-semibold mb-6">Hubungi</div>
+                <div class="space-y-3 text-sm text-zinc-400">
+                    <div>admin.klikmy@gmail.com</div>
+                </div>
+            </div>
+            <div>
+                <div onclick="toggleChat()" class="cursor-pointer text-yellow-400 hover:text-yellow-300 flex items-center gap-2">
+                    <i class="fa-solid fa-comment-dots"></i> Support
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-xs text-zinc-500 mt-20 border-t border-white/10 pt-8">
+            © 2026 K L I K.
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+        }
+
+        function toggleDarkMode() {
+            const icon = document.getElementById('theme-icon');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        }
+
+        function toggleChat() {
+            document.getElementById('chat-widget').classList.toggle('hidden');
+        }
+
+        function showEmail() {
+            alert("Email kami:\nadmin.klikmy@gmail.com");
+        }
+
+        window.onload = function() {
+            console.log('%c✅ Landing Page KLik siap — Semua struktur asal kekal!', 'color:#facc15; font-size:14px;');
+        };
+    </script>
+</body>
+</html>
